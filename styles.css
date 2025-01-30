@@ -1,0 +1,161 @@
+:root {
+    --primary-color: #2276c4; /* Dark Blue */
+    --secondary-color: #FAF0CA; /* Soft Cream */
+    --accent-color: #F4A261; /* Warm Orange */
+}
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        .footer-wrapper {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .wave-container {
+            height: 200px;
+            overflow: hidden;
+            position: absolute;
+            bottom: 100%;
+            width: 100%;
+        }
+
+        .wave {
+            animation: wave 15s linear infinite;
+            fill: var(--primary-color);
+            opacity: 0.8;
+        }
+
+        #wave2 {
+            animation-duration: 12s;
+            opacity: 0.6;
+            fill: var(--secondary-color);
+        }
+
+    
+
+        .footer-content {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            
+        }
+
+        .ads-container {
+            display: flex;
+            gap: 2rem;
+            animation: slide 10s linear infinite;
+        }
+
+        .ad-item {
+            flex: 0 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            transition: all 0.3s ease;
+            min-width: 400px;
+            
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .ad-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .ad-content {
+            color: white;
+        }
+
+        .ad-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+        }
+
+        .ad-description {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .ad-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .ad-item:hover .ad-image {
+            transform: rotate(-5deg) scale(1.1);
+        }
+
+        .discount-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: var(--accent-color);
+            color:white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes wave {
+            to { transform: translateX(-100%); }
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-200%); } /* SET HERE */
+        }
+
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .wave-container{
+                height: 100px;
+            }
+            
+            .ad-item {
+                width: 50px;
+            }
+            
+            .ad-title {
+                font-size: 1rem;
+            }
+            
+            .ad-image {
+                width: 60px;
+                height: 60px;
+            }
+
+            @keyframes slide {
+                0% { transform: translateX(130%); }
+                100% { transform: translateX(-450%); }  /* set here mobile  */
+            }
+        }
