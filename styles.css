@@ -1,3 +1,8 @@
+:root {
+    --primary-color: #2276c4; /* Dark Blue */
+    --secondary-color: #FAF0CA; /* Soft Cream */
+    --accent-color: #F4A261; /* Warm Orange */
+}
 
         * {
             margin: 0;
@@ -281,31 +286,6 @@
 
         @keyframes slide {
             0% { transform: translateX(100%); }
-            100% { transform: translateX(-200%); } /* SET HERE */
-        }
+            100% { transform: translateX(-200%); }} */
 
-
-        /* Mobile responsive */
-        @media (max-width: 768px) {
-            .wave-container{
-                height: 100px;
-            }
-            
-            .ad-item {
-                width: 50px;
-            }
-            
-            .ad-title {
-                font-size: 1rem;
-            }
-            
-            .ad-image {
-                width: 60px;
-                height: 60px;
-            }
-
-            @keyframes slide {
-                0% { transform: translateX(130%); }
-                100% { transform: translateX(-450%); }  /* set here mobile  */
-            }
-        }
+        
